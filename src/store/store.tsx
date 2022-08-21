@@ -4,12 +4,16 @@ import { configureStore } from "@reduxjs/toolkit";
 import Thunk from "redux-thunk";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+import cartReducer from "./cart-slice/slice";
+
 const persistConfig = {
   key: "root",
   storage: AsyncStorage,
-  whitelist: ["auth"],
+  whitelist: ["cart"],
 };
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  cart: cartReducer,
+});
 const middleware = [Thunk];
 let composed = applyMiddleware(...middleware);
 const reactotron = require("../config/reactotron").default;
