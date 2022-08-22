@@ -1,9 +1,9 @@
 import { Dimensions } from "react-native";
 const { width, height } = Dimensions.get("window");
-export const palette = {
+const palette = {
   black: "#0B0B0B",
-  white: "#F0F2F3",
-  primary: "#ffff",
+  white: "#fff",
+  primary: "#F0F2F3",
   secondary: "#0B0B0B",
   warning: "#ffcc00",
   success: "#42ba96",
@@ -11,7 +11,7 @@ export const palette = {
   gray: "#808080",
 };
 
-export const spacing = {
+const spacing = {
   xs: 4,
   s: 6,
   m: 8,
@@ -19,9 +19,15 @@ export const spacing = {
   lg: 32,
   xl: 64,
 };
-export const borders = {
+const borders = {
   thin: 1,
-  thick: 3,
+  thick: 2,
+};
+const Radios = {
+  xs: 2,
+  s: 4,
+  m: 8,
+  l: 16,
 };
 
 export const fontSizes = {};
@@ -34,4 +40,4 @@ export const RHeight = (h: any) => {
   return (Dimensions.get("window").height * h) / 812;
 };
 
-export { width, height };
+export { width, height, palette, spacing, borders, Radios };
