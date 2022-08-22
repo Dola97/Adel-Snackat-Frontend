@@ -4,15 +4,15 @@ import { configureStore } from "@reduxjs/toolkit";
 import Thunk from "redux-thunk";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import cartReducer from "./cart-slice/slice";
+import cartReducer from "./cart-slice/cart-slice";
 
 const persistConfig = {
   key: "root",
   storage: AsyncStorage,
-  whitelist: ["cart"],
+  whitelist: ["cartv1"],
 };
 const rootReducer = combineReducers({
-  cart: cartReducer,
+  cartv1: cartReducer,
 });
 const middleware = [Thunk];
 let composed = applyMiddleware(...middleware);
