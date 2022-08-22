@@ -1,2 +1,2 @@
 import { RootState } from "../store";
-export const selectisMount = (state: RootState) => state.cart.isMount;
+export const selectCart = (state: RootState) => state.cartv1.line_items;
