@@ -3,7 +3,7 @@ import { StyleProp, TouchableOpacity, ViewStyle } from "react-native";
 
 interface Props {
   styleButton?: StyleProp<ViewStyle>;
-  children: any;
+  children: React.ReactNode;
   loading: boolean | undefined;
   loadingComponent?: any;
   onPress: () => void;

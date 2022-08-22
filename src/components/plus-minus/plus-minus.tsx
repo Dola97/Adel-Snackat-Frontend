@@ -1,8 +1,8 @@
-import { Minus, Plus } from "assets/svgs";
-import { Text } from "components/Text/Text";
 import React from "react";
-import { TouchableOpacity, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { palette, RHeight, RWidth, spacing } from "theme";
+import { Text } from "components/Text/Text";
+
 interface Props {
   quantity: number;
   PlusQuantity: () => void;
@@ -10,23 +10,10 @@ interface Props {
 }
 export const PlusMinus: React.FC<Props> = (props) => {
   return (
-    <View
-      style={{
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-around",
-        alignSelf: "flex-end",
-      }}
-    >
+    <View style={styles.containerQuantity}>
       <TouchableOpacity
         onPress={props.PlusQuantity}
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          width: RWidth(30),
-          height: RHeight(30),
-          backgroundColor: palette.gray,
-        }}
+        style={styles.containerPlusMinus}
       >
         <Text
           children="+"
@@ -46,13 +33,7 @@ export const PlusMinus: React.FC<Props> = (props) => {
       />
       <TouchableOpacity
         onPress={props.MinusQuantity}
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          width: RWidth(30),
-          height: RHeight(30),
-          backgroundColor: palette.gray,
-        }}
+        style={styles.containerPlusMinus}
       >
         <Text
           children="-"
@@ -65,3 +46,19 @@ export const PlusMinus: React.FC<Props> = (props) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  containerQuantity: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+    alignSelf: "flex-end",
+  },
+  containerPlusMinus: {
+    justifyContent: "center",
+    alignItems: "center",
+    width: RWidth(30),
+    height: RHeight(30),
+    backgroundColor: palette.gray,
+  },
+});

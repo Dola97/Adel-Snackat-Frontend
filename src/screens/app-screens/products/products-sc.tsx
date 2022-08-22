@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { SafeAreaView, TouchableOpacity } from "react-native";
 import { palette } from "theme";
 import { ProductsList } from "./components/list";

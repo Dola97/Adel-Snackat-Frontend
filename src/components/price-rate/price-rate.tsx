@@ -1,22 +1,15 @@
 import React, { memo } from "react";
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { palette, spacing } from "theme";
-import { Text } from "../../Text/Text";
+import { Text } from "../Text/Text";
 
 interface Props {
   price: number;
   rate: number;
 }
 export const PriceRateComponent: React.FC<Props> = memo((props) => {
-  console.log("price render");
   return (
-    <View
-      style={{
-        flexDirection: "row",
-        justifyContent: "space-between",
-        marginTop: spacing.m,
-      }}
-    >
+    <View style={styles.container}>
       <Text
         children={`USD ${props.price}`}
         type={"bold"}
@@ -33,4 +26,12 @@ export const PriceRateComponent: React.FC<Props> = memo((props) => {
       />
     </View>
   );
+});
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: spacing.m,
+  },
 });

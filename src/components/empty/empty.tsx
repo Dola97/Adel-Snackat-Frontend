@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native";
 import { palette } from "theme";
 
 interface Props {
-  children: any;
+  children: React.ReactNode;
 }
 export const Empty: React.FC<Props> = (props) => {
   return (

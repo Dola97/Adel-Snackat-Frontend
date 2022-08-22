@@ -16,9 +16,7 @@ interface Props {
 }
 export const CartCard: React.FC<Props> = (props) => {
   const dispatch = useDispatch();
-  console.log("d", props.id);
   const _handleDelete = useCallback(() => {
-    console.log(props.id, "id");
     dispatch(removeFromCart(props.id));
   }, [props.id, dispatch]);
   const _incrementDecrement = useCallback(

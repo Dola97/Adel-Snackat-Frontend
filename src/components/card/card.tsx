@@ -10,8 +10,8 @@ import {
 import { borders, palette, Radios, RHeight, RWidth, spacing } from "theme";
 import { Chip } from "../chip/chip";
 import { Text } from "../Text/Text";
-import { AddCartButton } from "./components/add-to-cart";
-import { PriceRateComponent } from "./components/price-rate";
+import { AddCartButton } from "../add-to-cart-button/add-to-cart-button";
+import { PriceRateComponent } from "../price-rate/price-rate";
 interface Props {
   img: any;
   imgStyle?: StyleProp<ImageStyle>;

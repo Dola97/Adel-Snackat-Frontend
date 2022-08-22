@@ -5,7 +5,6 @@ import { CartCard, Empty, Text } from "components";
 import { selectCart } from "src/store/cart-slice";
 import { useSelector } from "react-redux";
 export const CartScreen = () => {
-  console.log("dddjksfkjdkl");
   const cart = useSelector(selectCart);
   if (cart.length === 0) {
     return (

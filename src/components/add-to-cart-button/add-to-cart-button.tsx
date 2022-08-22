@@ -1,22 +1,16 @@
 import React, { memo } from "react";
+import { StyleSheet } from "react-native";
 import { palette, Radios, spacing } from "theme";
-import { Button } from "../../button/button";
-import { Text } from "../../Text/Text";
+import { Button } from "../button/button";
+import { Text } from "../Text/Text";
 interface Props {
-  onPress: any;
+  onPress: () => void;
 }
 export const AddCartButton: React.FC<Props> = memo((props) => {
-  console.log("cart button render");
   return (
     <Button
       onPress={props.onPress}
-      styleButton={{
-        backgroundColor: palette.black,
-        borderRadius: Radios.s,
-        alignSelf: "flex-end",
-        padding: spacing.m,
-        marginTop: spacing.l,
-      }}
+      styleButton={styles.button}
       children={
         <Text
           children="Add To Cart"
@@ -29,4 +23,13 @@ export const AddCartButton: React.FC<Props> = memo((props) => {
       loading={false}
     />
   );
+});
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: palette.black,
+    borderRadius: Radios.s,
+    alignSelf: "flex-end",
+    padding: spacing.m,
+    marginTop: spacing.l,
+  },
 });
