@@ -1,7 +1,13 @@
 interface cartState {
-  isMount: boolean;
+  line_items: {
+    id: number;
+    title: string;
+    price: number;
+    image: string;
+    quantity: number;
+  }[];
 }
 
 export const initialState: cartState = {
-  isMount: false,
+  line_items: [],
 };
