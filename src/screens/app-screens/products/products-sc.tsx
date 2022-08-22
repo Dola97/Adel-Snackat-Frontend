@@ -3,11 +3,8 @@ import { SafeAreaView, TouchableOpacity } from "react-native";
 import { palette } from "theme";
 import { ProductsList } from "./components/list";
 import useFetch from "hooks/useFetch";
-
-import { Tess } from "./components/text";
 import { Cart } from "assets/svgs";
 import { useNavigation } from "@react-navigation/native";
-import { Empty, Text } from "components";
 export const ProductsScreen = ({ navigation }: any) => {
   const { data, loading, status, error } = useFetch("/products");
   const { navigate } = useNavigation();
@@ -32,7 +29,6 @@ export const ProductsScreen = ({ navigation }: any) => {
         endReached={() => console.log("refresh")}
         refreshing={loading}
       />
-      <Tess />
     </SafeAreaView>
   );
 };
